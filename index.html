@@ -36,16 +36,40 @@
             justify-content: center;
             margin-top: 8vh;
             border-radius: 10px;
+            background-color: brown;
+            color: aliceblue;
+            font-size: 2vw;
+            font-weight: 500;
+        }
+        .back{
+            filter: drop-shadow(10px 100px 100px rgb(255, 235, 9));
         }
     </style>
     <div class="continer">
-        <img src="off.png" alt="" >
+        <img src="off.png" alt=""  id="Bulb">
         
         
     </div>
-    <button class="btn">Toggle</button>
+    <button class="btn" onclick="bulbaction()">Toggle</button>
     <script>
-        
+        function bulbaction()
+        {
+            let bulbElement = document.getElementById("Bulb")
+            if (bulbElement.src.includes('off.png')){
+                bulbElement.src='on.png'
+                bulbElement.classList.add("back")
+
+
+            }
+            else{
+                bulbElement.src = 'off.png'
+                bulbElement.classList.remove("back")
+            
+
+
+            }
+        }
+
     </script>
     
     
